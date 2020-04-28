@@ -1,22 +1,25 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-require_once './vendor/autoload.php';
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$message = $_POST['message'];
+	
+	$email_from = 'uditlamas@gmail.com';
+	
+	$email_subject = "New Person Contacting";
+	
+	$email_body = "User Name: $name.\n".
+					"User Email:$email.\n".
+						"User Phone no:$phone.\n".
+							"User message:$message.\n";
+	
+	$to = "uditlamas26@gmail.com";
+	
+	$headers = "From: $email_from\r\n";
+	
+	$headers .= "Reply-To: $email\r\n";
 
-use FormGuide\Handlx\FormHandler;
-
-
-$pp = new FormHandler(); 
-
-$validator = $pp->getValidator();
-$validator->fields(['name','email'])->areRequired()->maxLength(50);
-$validator->field('email')->isEmail();
-$validator->field('message')->maxLength(6000);
-
-
-
-
-$pp->sendEmailTo('uditlamas26@gmail.com');
-
-echo $pp->process($_POST);
+	mail($to,$email_subject,$email_body,$headers);
+	
+	header("Location: contact.html");
+?>
