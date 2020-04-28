@@ -1,32 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head><title></title>
-<link rel="stylesheet" href="stylees.css">
-
-</head>
-
-
-<body>
-<header>
-	<nav class="navbar">
-		<div class="logo">
-			<a href="" target="_blank">Welcome to my website</a>
-		</div>
-		
-		<div class="menu">
-			<ol>
-				<li><a href="#" class="active">About Me</li>
-				<li><a href="#">My Work</li>
-				<li><a href="#">Skills</li>
-				<li><a href="#">Dream Project</li>
-			</ol>
-		</div>
-			
-		<div class="contact_btn">
-			<a href="contact.html" target="_self">contact me</a>
-		</div>
-	</nav>
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+	<title>Uditman Samal</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="all.min.css">
 	
+	</head>
+	
+	<body>
+		<section class="upper" >
+			<header> 
+				<div class="menu">
+					<p id="wel">Welcome to my Website</p>
+					<img src="menu.jpg" id="img"/>
+				</div>
+			</header>
+		</section>
+		<section>
+			<img src="back.jpg" id="back">
+		</section>
+		<nav id="side">
+			<ul>
+				<li><a href="#">Home</li>
+				<li><a href="#">Portfolio</li>
+				<li><a href="#">Strength</li>
+				<li><a href="#">Dream Project</li>
+				<li><a href="contact.html" target="_self">Contact</li>
+			</ul>
+		</nav>
+		
 		<div class="statement">
 			<p id="p1">Hello,</p>
 			<p id="p1">My name is Uditman Samal.</p>
@@ -35,28 +38,18 @@
 			<p id="p2">Feel free to look at my projects.</p>
 			<p id="p2"></p>
 		</div>
-</header>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	<script>
+		var img = document.getElementById("img");
+		var side = document.getElementById("side");
+		
+		side.style.right = "-250px";
+		img.onclick = function () {
+		if(side.style.right == "-250px")
+			side.style.right = "0";
+		else
+			side.style.right = "-250px";
+		}
+	</script>
+	</body>
+</HTML>
